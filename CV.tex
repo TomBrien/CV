@@ -1,6 +1,145 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[11pt,a4paper]{moderncv}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+%%% Theme
+\moderncvstyle{banking}
+\moderncvcolor{red}
+
+\renewcommand{\familydefault}{\rmdefault}
+
+
+
+%Create unbreakable item
+\newcommand{\UBitem}[1]{%
+	\begin{minipage}%
+		\item #1%
+	\end{minipage}}
+
+\newcommand{\cvdoubleitemcustom}[3][.25em]{%
+  \begin{minipage}[t]{\doubleitemcolumnwidth}#2\end{minipage}%
+  \hfill % fill of \separatorcolumnwidth
+\begin{minipage}[t]{\doubleitemcolumnwidth}#3\end{minipage}%
+  \par\addvspace{#1}}
+
+\newcommand{\cvdoublecolumn}[2]{%
+  \cvitem[0.75em]{}{%
+    \begin{minipage}[t]{\doubleitemcolumnwidth}#1\end{minipage}%
+    \hfill%
+    \begin{minipage}[t]{\doubleitemcolumnwidth}#2\end{minipage}%
+    }%
+}
+
+% usage: \cvreference{name}{address line 1}{address line 2}{address line 3}{address line 4}{e-mail address}{phone number}
+% Everything but the name is optional
+% If \addresssymbol, \emailsymbol or \phonesymbol are specified, they will be used.
+% (Per default, \addresssymbol isn't specified, the other two are specified.)
+% If you don't like the symbols, remove them from the following code, including the tilde ~ (space).
+
+\newcommand{\cvreference}[7]{%
+    \textbf{#1}\newline% Name
+    \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
+    \ifthenelse{\equal{#3}{}}{}{#3\newline}%
+    \ifthenelse{\equal{#4}{}}{}{#4\newline}%
+    \ifthenelse{\equal{#5}{}}{}{#5\newline}%
+    \ifthenelse{\equal{#6}{}}{}{\emailsymbol~#6\newline}%
+    \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
+
+%\usepackage{fouriernc}
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}
+%\setlength{\makecvtitlenamewidth}{10cm}
+
+%%% Personal Details
+\name{Thomas}{Brien}
+\title{Curriculum Vitae}
+\address{41 Morris Avenue, Cardiff, CF14 5JW, United Kingdom}
+\phone[fixed]{+44 (0)29 20257 102}
+\phone[mobile]{+44 (0)75 40490 409}
+\email{tom@tombrien.com}
+
+%%% Content
 \begin{document}
-Hello world!
-\\
-$\frac{2}{2} = 1$ %math mode
+\makecvtitle
+
+
+\section{Education}
+\cventry{2011--2015}{PhD}{Cardiff University}{}{}{}
+\cventry{2006--2010}{MPhys}{Cardiff University}{}
+	{\textit{upper second-class honours}}{}
+
+\section{Doctoral Thesis}
+\cvitem{Title}{\textit{The Silicon Cold-Electron Bolometer}}
+\cvitem{Primary Supervisor}{Prof. Philip Mauskopf}
+\textit{Available on-line at:} \url{http://orca.cf.ac.uk/id/eprint/77064}
+%\cvitem{Abstract}{A new type of bolometric detector---the silicon cold-electron bolometer---is introduced and the underlying physics are discussed. Particular note is given to the advantages of using strained silicon as the bolometer's absorber. The detector is measured both in the absence and presence of optical loading and the sensitivity of the detector is found. Additionally, a novel procedure for measurement below the standard amplifier noise limit of a voltage readout is presented.}
+%
+\section{Employment}
+\cventry{2015--present}{Postdoctoral Research Associate}{Cardiff University}{}{}{\textit{Characterising low dark current mercury cadmium telluride detectors for astronomical applications.\\
+Developing Kinetic Inductance Detectors for astronomy.\\
+Design and commissioning of the MUSCAT instrument for the Large Millimeter Telescope -- Cryogenics Lead}}
+\cventry{2010--2011}{Research Assistant}{Cardiff University}{}{}{}
+%
+\section{Research Interests}
+\cvitem{Astronomical Instrumentation}{Characterisation and integration of infrared detectors for astronomy.}
+\cvitem{Cryogenics}{Development, construction, and operation of sub-Kelvin systems.}
+%\cvitem{Solid-State Physics}{Particularly regarding the interaction of electrons and phonons at low temperatures; also, tunnelling structures.}
+%
+\section{Publications}
+\textit{ORCiD: \href{ https://orcid.org/0000-0001-6827-2481}{0000-0001-6827-2481}}
+\begin{itemize}
+\item Brien et al. \textit{MUSCAT: The Mexico-UK Sub-Millimetre Camera for AsTronomy}, Proceedings of SPIE \textbf{10708}, 2018. \mbox{DOI: 10.1117/12.2313697}
+\item Castillo-Dominguez et al. \textit{Mexico-UK Sub-millimeter Camera for Astronomy}, Low Temp Phys, 2018. \mbox{DOI: 10.1007/s10909-018-2018-9}
+\item Brien et al. \textit{A Continuous 100-mK Helium-Light Cooling System for MUSCAT on the LMT}, Low Temp Phys, 2018. \mbox{DOI: 10.1007/s10909-018-2024-y}
+\item Morozov et al. \textit{Design and Characterisation of Titanium Nitride Subarrays of Kinetic Inductance Detectors for Passive Terahertz Imaging},  Low Temp Phys, 2018. \\ \mbox{DOI: 10.1007/s10909-018-2023-z}
+\item Brien et al. \textit{A cryogenic testbed for the characterisation of large detector arrays for astronomical and Earth-observing applications in the near to very-long-wavelength infrared}, Proceedings of SPIE \textbf{9904}, 2016. \mbox{DOI: 10.1117/12.2234403}
+\item Brien et al. \textit{Optical Response of Strained- and Unstrained-Silicon Cold-Electron Bolometers}, Journal of Low Temperature Physics, \textbf{184}, 2016. \mbox{DOI: 10.1007/s10909-016-1569-x}
+\item Rowe et al. \textit{A passive terahertz video camera based on lumped element kinetic inductance detectors}, Review of Scientific Instruments, \textbf{87}, 2016. \mbox{DOI: 10.1063/1.4941661}
+\item Brien et al. \textit{Optical Characterisation of a Strained-Silicon Cold-Electron Bolometer at 160 GHz}, 2015 8$^{\mathrm{th}}$ UK, Europe, China Millimeter Waves and THz Technology Workshop (UCMMT), Cardiff, United Kingdom, 2015. \mbox{DOI: 10.1109/UCMMT.2015.7460630}
+\item Brien et al. \textit{A strained-silicon cold-electron bolometer using Schottky contacts}, Applied Physics Letters, \textbf{105}, 2014. \mbox{DOI: 10.1063/1.4892069}
+\item Whall et al. \textit{Cooltronics: A new low-temperature tunnelling-technology based on silicon}, Ultimate Integration on Silicon (ULIS), 14th International Conference on, 2013. \mbox{DOI: 10.1109/ULIS.2013.6523477}
+\end{itemize}
+%
+\section{Talks \& Presentations}
+\begin{itemize}
+\item \textbf{May 2019}: International Workshop on EAO Futures: Future Science and Instrumentation, \textit{Invited}; \textit{Nanjing, China}
+\item \textbf{Jun. 2018}: SPIE: Astronomical Telescopes and Instrumentation 2018; \textit{Austin, USA}
+\item \textbf{Jul. 2017}: 17\textsuperscript{th} International Workshop on Low Temperature Detectors; \textit{Kurume, Japan}
+\item \textbf{Jun. 2016}: SPIE: Astronomical Telescopes and Instrumentation 2016; \textit{Edinburgh, UK}
+\item \textbf{Sept. 2015}: 8\textsuperscript{th} UK, Europe, China Conference on Millimetre Waves and Terahertz Technologies; \textit{Cardiff, UK}
+\item \textbf{Jul. 2015}: 16\textsuperscript{th} International Workshop on Low Temperature Detectors; \textit{Grenoble, France}
+%\item \textbf{Oct. 2013}: EPSRC e-fridge annual review meeting; \textit{Warwick, UK}
+%\item \textbf{Jan. 2013}: EPSRC e-fridge half-year meeting; \textit{Warwick, UK}
+%\item \textbf{Oct. 2012}: EPSRC e-fridge annual review meeting; \textit{Warwick, UK}
+%\item \textbf{Apr. 2012}: EPSRC e-fridge half-year meeting; \textit{Cardiff, UK}
+%\item \textbf{Oct. 2011}: EPSRC e-fridge annual review meeting; \textit{Warwick, UK}
+\end{itemize}
+%
+\section{Teaching Experience}
+\cventry{2011--2015}{Teaching Assistant}{Cardiff University}{}{}{First-Year Teaching Laboratory}
+\cventry{2017--Present}{Deputy Module Organiser}{Cardiff University}{}{}{First-Year Teaching Laboratory}
+%
+\section{Skills}
+\cvdoubleitem{\LaTeX}{Fluent}{Python}{Competent}
+\cvdoubleitem{LabView}{Competent}{MATLAB}{Competent}
+\cvdoubleitem{Microsoft Office}{Fluent}{SolidWorks}{Competent}
+\cvdoubleitem{AutoCAD}{Competent}{Inkscape}{Competent}
+\cvdoubleitemcustom{Use of liquid cryogens}{Sub-Kelvin refrigeration}
+\cvdoubleitemcustom{Ultra-low-noise readout}{}
+%
+\section{Miscellanea}
+\begin{itemize}
+\item \textbf{Local Organising Committee}, 8\textsuperscript{th} UK, Europe China, Conference on Millimetre Waves and Terahertz Technologies. September 2015; Cardiff, UK.
+
+\end{itemize}
+\section{Other Interests}
+\cvitem{Fencing}{Cardiff University Fencing Club: Men's First Team 2008--2014, Committee 2009--2014, President 2011--2013. Awards: Half Colours, Club Honours and sole recipient of 2013 Athletic Union President's Award. Welsh Junior Team: 2006.}
+%\cvitem{Charity}{I am an active supporter of several charities including Oxfam for whom I organise a charitable annual fencing tournament which, since 2013, has raised over \pounds{}3,000 for the charity.}
+
+\section{References}
+\cvdoublecolumn{\cvreference{Prof. Peter Ade}{School of Physics and Astronomy}{Cardiff University}{The Parade}{Cardiff, CF24 3AA, UK}{Peter.Ade@astro.cf.ac.uk}{+44 (0) 29 20874 643}}
+{\cvreference{Prof. Philip Mauskopf}{Department of Physics}{Arizona State University}{650 E. Tyler Mall, Tempe}{Arizona 85287, USA}{Philip.Mauskopf@asu.edu}{+1 480 965 3267}}
+
+
 \end{document}
