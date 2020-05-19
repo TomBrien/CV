@@ -18,7 +18,7 @@ def buildLine(pub):
     if 'eprint' not in pub.bib.keys():
         if 'url' in pub.bib.keys():
             pub.bib['eprint'] = pub.bib['url']
-    tex += r' \mbox{\href{Avaliable online}{' + pub.bib['eprint'] + '}}'
+    tex += r' \mbox{\href{Available online}{' + pub.bib['eprint'] + '}}'
     return tex
 
 
