@@ -3,5 +3,5 @@ CV.aux
 CV.log
 *.env
 
-__pycache__/
+scholarly/__pycache__/*
 
