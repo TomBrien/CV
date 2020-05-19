@@ -1,4 +1,6 @@
 import scholarly
+import pickle
+
 
 def buildLine(pub):
     tex = r'\item '
@@ -39,4 +41,5 @@ for i, pub in enumerate(pubs):
             continue
     papers.append(buildLine(pub))
 
-
+with open('papers.pkl', 'wb') as f:
+    pickle.dump(papers, f)
