@@ -198,7 +198,11 @@ class Publication(object):
                 elif key == 'Publisher':
                     self.bib['publisher'] = val.text
                 elif key == 'Publication date':
-                    self.bib['year'] = arrow.get(val.text).year
+                    if re.match(r'^\d{4}/\d{1}$', val.text):
+                        temp = (val.text[:5] + '0' + val.text[5:])
+                        self.bib['year'] = arrow.get(temp).year
+                    else:
+                        self.bib['year'] = arrow.get(val.text).year
                 elif key == 'Description':
                     if val.text[0:8].lower() == 'abstract':
                         val = val.text[9:].strip()
